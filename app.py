@@ -348,8 +348,7 @@ trainer.fit(model)
 st.markdown(
     "From this data, high level conclusions and guides can be found in the "
     "[Advanced GPU Optimized Training documentation](https://pytorch-lightning.readthedocs.io/en/latest/advanced/advanced_gpu.html).\n\n"
-    "Fully Sharded is still in development, and can be installed from [this](https://github.com/PyTorchLightning/pytorch-lightning/tree/feat/fsdp) branch.\n\n"
-    "In addition, see [the benchmark code](https://github.com/SeanNaren/minGPT/tree/streamlit)."
+    "In addition, see [the benchmark code](https://github.com/SeanNaren/minGPT/tree/benchmark)."
 )
 
 plot_model_size_vs_metric_figure(

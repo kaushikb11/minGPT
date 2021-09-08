@@ -52,7 +52,7 @@ if __name__ == '__main__':
     parser.add_argument('--block_size', default=128, type=int)
     parser.add_argument('--batch_size', default=8, type=int)
     parser.add_argument('--num_workers', default=0, type=int)
-    parser.add_argument('--checkpoint', action='store_true', default=False)
+    parser.add_argument('--checkpoint', action='store_true', default=True)
     parser.add_argument('--auto_wrap', action='store_true', default=False)
     parser.add_argument('--wrap', action='store_true', default=False)
     parser.add_argument('--full_shakespeare', action='store_true', default=False)
@@ -89,9 +89,10 @@ if __name__ == '__main__':
         args,
         plugins=args.plugins,
         log_every_n_steps=1,
-        max_epochs=1,
+        max_epochs=3,
         gradient_clip_val=1.0,
-        checkpoint_callback=False,
         callbacks=[lr_decay, CUDACallback()],
     )
     trainer.fit(model, train_loader)
+    trainer.test(model, train_loader)
+    

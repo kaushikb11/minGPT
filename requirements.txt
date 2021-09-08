@@ -1,1 +1,6 @@
-git+https://github.com/kaushikb11/pytorch-lightning.git
+streamlit
+plotly
+matplotlib
+pytorch-lightning==1.4.0
+deepspeed==0.4.3
+fairscale

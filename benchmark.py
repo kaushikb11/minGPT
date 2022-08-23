@@ -6,7 +6,7 @@ import numpy as np
 import torch
 from pytorch_lightning import Trainer
 from pytorch_lightning import seed_everything
-from pytorch_lightning.utilities import rank_zero_info
+from pytorch_lightning.utilities.rank_zero import rank_zero_info
 from pytorch_lightning.callbacks import DeviceStatsMonitor
 from torch.utils.data import Dataset, DataLoader
 

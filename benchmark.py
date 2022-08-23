@@ -7,7 +7,7 @@ import torch
 from pytorch_lightning import Trainer
 from pytorch_lightning import seed_everything
 from pytorch_lightning.utilities import rank_zero_info
-from pytorch_lightning.callbacks import XLAStatsMonitor
+from pytorch_lightning.callbacks import DeviceStatsMonitor
 from torch.utils.data import Dataset, DataLoader
 
 from mingpt.lr_decay import LearningRateDecayCallback
@@ -82,6 +82,6 @@ if __name__ == '__main__':
         max_epochs=5,
         tpu_cores=8,
         gradient_clip_val=1.0,
-        callbacks=[lr_decay, XLAStatsMonitor()],
+        callbacks=[lr_decay, DeviceStatsMonitor()],
     )
     trainer.fit(model, train_loader)
